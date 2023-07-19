@@ -9,6 +9,6 @@ work_router = Router()
 @work_router.callback_query(WorkDayCallback.filter())
 async def handle_waifu_type(query: CallbackQuery, callback_data: WorkDayCallback):
     if callback_data.day == 'work':
-        await query.message.answer('Давай проверим кое-что, напиши команду /work (час когда начинается работа) (минута когда начинается работа)\n (час когда кончается работа) (минута когда кончается работа)')
+        await query.message.answer('Используя /work напиши своё расписание\n(пример: /work 10 00 14 30)')
     else:
         await query.message.answer('Выходные прекрасны, не так ли?')
