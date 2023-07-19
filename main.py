@@ -2,13 +2,14 @@ import asyncio
 
 from aiogram import Bot, Dispatcher
 from aiogram.fsm.storage.memory import MemoryStorage
-from handlers import common
+from handlers import common, work_handlers
 
 from config import config
 
 
 def register_all_routers(dp: Dispatcher):
     dp.include_router(common.common_router)
+    dp.include_router(work_handlers.work_router)
 
 
 async def main():
